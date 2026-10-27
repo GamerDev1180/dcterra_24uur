@@ -93,6 +93,6 @@ client.on('guildMemberAdd', (member) => {
 });
 
 
-client.login("MTI4Njc4NDAzMzMyMTEyNzk2Nw.GRhVMB.glMV7AWPQ3YPOQAP9OezeSA3lT4Jgov05j2f7Y").catch((error) => {
+client.login("").catch((error) => {
     console.error('Failed to login:', error);
 });
