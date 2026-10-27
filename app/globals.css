@@ -1,0 +1,287 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Huisstijl gebaseerd op het logo van Wensstichting Drenthe:
+  roze (#ed217c), hemelsblauw (#28ace2), donkerblauw (#1f5ea4),
+  groen ("Drenthe") en een gele ster.
+*/
+:root {
+  --brand-pink: #ed217c;
+  --brand-blue: #28ace2;
+  --brand-navy: #1f4e8c;
+  --brand-green: #3aa935;
+  --brand-yellow: #ffc83d;
+
+  --background: #fffaf5;
+  --foreground: #1c2a44;
+  --card: #ffffff;
+  --card-foreground: #1c2a44;
+  --popover: #ffffff;
+  --popover-foreground: #1c2a44;
+  --primary: #d81b6f;
+  --primary-foreground: #ffffff;
+  --secondary: #e6f5fc;
+  --secondary-foreground: #14507a;
+  --muted: #f5efe8;
+  --muted-foreground: #5b6478;
+  --accent: #fde8f1;
+  --accent-foreground: #a3124f;
+  --destructive: #c62828;
+  --destructive-foreground: #ffffff;
+  --success: #2e8a2a;
+  --success-foreground: #ffffff;
+  --border: #ece3d9;
+  --input: #e2d8cd;
+  --ring: #ed217c;
+  --chart-1: #ed217c;
+  --chart-2: #28ace2;
+  --chart-3: #1f5ea4;
+  --chart-4: #3aa935;
+  --chart-5: #ffc83d;
+  --radius: 1rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1c2a44;
+  --sidebar-primary: #d81b6f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fde8f1;
+  --sidebar-accent-foreground: #a3124f;
+  --sidebar-border: #ece3d9;
+  --sidebar-ring: #ed217c;
+}
+
+.dark {
+  --background: #0f1729;
+  --foreground: #f3f5fa;
+  --card: #172238;
+  --card-foreground: #f3f5fa;
+  --popover: #172238;
+  --popover-foreground: #f3f5fa;
+  --primary: #ff4d9a;
+  --primary-foreground: #1a0610;
+  --secondary: #16324d;
+  --secondary-foreground: #bfe8fb;
+  --muted: #1c2940;
+  --muted-foreground: #a3adc2;
+  --accent: #3a1630;
+  --accent-foreground: #ffc2dc;
+  --destructive: #ef5350;
+  --destructive-foreground: #ffffff;
+  --success: #5cc858;
+  --success-foreground: #0b2a0a;
+  --border: #26344f;
+  --input: #2c3b58;
+  --ring: #ff4d9a;
+  --chart-1: #ff4d9a;
+  --chart-2: #4cc3f0;
+  --chart-3: #6e9fe0;
+  --chart-4: #5cc858;
+  --chart-5: #ffd166;
+  --sidebar: #172238;
+  --sidebar-foreground: #f3f5fa;
+  --sidebar-primary: #ff4d9a;
+  --sidebar-primary-foreground: #1a0610;
+  --sidebar-accent: #3a1630;
+  --sidebar-accent-foreground: #ffc2dc;
+  --sidebar-border: #26344f;
+  --sidebar-ring: #ff4d9a;
+}
+
+@theme inline {
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-green: var(--brand-green);
+  --color-brand-yellow: var(--brand-yellow);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--brand-pink) 25%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Formulieren */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}
+
+/* Stappen in het registratieformulier */
+.step-indicator {
+  @apply relative flex items-center justify-center w-10 h-10 rounded-full border-2 text-sm font-semibold transition-all;
+}
+.step-indicator.active {
+  @apply bg-primary border-primary text-primary-foreground shadow-lg shadow-primary/30;
+}
+.step-indicator.completed {
+  @apply bg-success border-success text-success-foreground;
+}
+.step-indicator.inactive {
+  @apply bg-card border-border text-muted-foreground;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Zachte, vriendelijke kaarten (de naam is gebleven voor de beheeromgeving). */
+.glow-card {
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgb(28 42 68 / 0.04), 0 8px 24px -12px rgb(28 42 68 / 0.12);
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+.glow-card:hover {
+  border-color: color-mix(in srgb, var(--primary) 25%, var(--border));
+  box-shadow: 0 1px 2px rgb(28 42 68 / 0.04), 0 16px 32px -14px rgb(28 42 68 / 0.2);
+}
+.dark .glow-card {
+  box-shadow: 0 8px 24px -12px rgb(0 0 0 / 0.5);
+}
+
+/* Vroeger een neon-gloed; nu gewoon nette tekst. */
+.text-glow {
+  text-shadow: none;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary) 35%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 10px color-mix(in srgb, var(--primary) 0%, transparent);
+  }
+}
+.animate-glow-pulse {
+  animation: glow-pulse 2.4s ease-in-out infinite;
+}
+
+/* Achtergrond voor hero-secties: zachte kleurvlekken in de merkkleuren. */
+.bg-mesh {
+  background-image:
+    radial-gradient(ellipse 55% 50% at 10% 0%, color-mix(in srgb, var(--brand-pink) 16%, transparent), transparent 70%),
+    radial-gradient(ellipse 50% 45% at 95% 15%, color-mix(in srgb, var(--brand-blue) 18%, transparent), transparent 70%),
+    radial-gradient(ellipse 45% 40% at 60% 110%, color-mix(in srgb, var(--brand-yellow) 18%, transparent), transparent 70%);
+}
+.bg-grid {
+  background-image: radial-gradient(color-mix(in srgb, var(--foreground) 10%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 85%);
+}
+
+/* Golvende sectie-overgang */
+.wave-top {
+  -webkit-mask: radial-gradient(28px 14px at 50% 0, #0000 98%, #000) 50% / 56px 100%;
+  mask: radial-gradient(28px 14px at 50% 0, #0000 98%, #000) 50% / 56px 100%;
+}
+
+/* Twinkelende sterren in de hero */
+@keyframes twinkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.8) rotate(18deg);
+    opacity: 0.7;
+  }
+}
+.animate-twinkle {
+  animation: twinkle 3.2s ease-in-out infinite;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-twinkle,
+  .animate-float,
+  .animate-glow-pulse {
+    animation: none;
+  }
+}
